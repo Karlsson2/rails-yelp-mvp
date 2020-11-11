@@ -11,3 +11,15 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+
+.big-div {
+  width: 300px;
+  margin: 0 auto;
+}
+.container {
+  background:white;
+  border-radius: 4px;
+  padding:30px;
+  box-shadow: 0 10px 30px rgba(0,0,0,1)!important;
+}

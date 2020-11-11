@@ -12,6 +12,26 @@
   </head>
 
   <body>
+
+<div class="big-div">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light justify-content-between">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+    <%= link_to "Restaurant List", restaurants_path(), class: "navbar-brand" %>
+    <form class="form-inline my-2 my-lg-0">
+       <%= link_to "New Restaurant", new_restaurant_path(), class: "btn btn-sm btn-outline-secondary my-2 my-sm-0"%>
+    </form>
+  </div>
+</nav>
+</div>
+
+
+<div class="big-div">
+  <div class="container">
     <%= yield %>
+  </div>
+</div>
   </body>
 </html>

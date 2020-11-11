@@ -8,5 +8,7 @@
     <p><%= review.content %></p>
     <% end %>
 
+<%=link_to "add review", new_restaurant_review_path(@restaurant) %>
+
 <%=link_to "Go back", restaurants_path() %>
 

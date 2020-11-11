@@ -11,10 +11,19 @@ require 'faker'
 Restaurant.destroy_all
 
 5.times{
-  Restaurant.create!({
+  rest = Restaurant.create!({
     name: Faker::Restaurant.name,
     address:Faker::Address.street_name,
     phone_number:Faker::PhoneNumber.phone_number_with_country_code ,
     category: %w(chinese italian japanese french belgian).sample
     })
+    5.times{
+  Review.create!({
+    rating: 5,
+    content: "test",
+    restaurant_id: rest.id
+  })
+}
   }
+
+

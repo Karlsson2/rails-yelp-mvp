@@ -1,11 +1,15 @@
 <h1>Restaurants#index</h1>
 <p>
   <% @restaurants.each do |restaurant|%>
-  <h2><%= restaurant.name %></h2>
-  <p><%= restaurant.address %></p>
-  <p><%= restaurant.phone_number %></p>
+    <%= link_to restaurant_path(restaurant.id) do %>
+    <h2><%= restaurant.name %></h2>
+    <p><%= restaurant.address %></p>
+    <p><%= restaurant.phone_number %></p>
+    <% end %>
   <% end %>
 
+
+  <%= link_to "New Restaurant", new_restaurant_path(), class: "btn btn-primary"%>
 
 </p>
 

@@ -1,12 +1,12 @@
 
-<h1>Restaurants</h1>
+<h2>Restaurants</h2>
 <p>
   <% @restaurants.each do |restaurant|%>
     <%= link_to restaurant_path(restaurant.id) do %>
-    <h2><%= restaurant.name %></h2>
+    <h3><%= restaurant.name %></h3>
+    <% end %>
     <p><%= restaurant.address %></p>
     <p><%= restaurant.phone_number %></p>
-    <% end %>
   <% end %>
 
 </p>

@@ -3,12 +3,21 @@
 <p><%= @restaurant.address %></p>
 <p><%= @restaurant.phone_number %></p>
 
+
 <h2> Reviews</h2>
+<ul class="list-group">
 <% @restaurant.reviews.each do |review|%>
-    <p><%= review.rating %></p>
-    <p><%= review.content %></p>
+    <li class="list-group-item" style ="display: flex; justify-content: space-between;"><p><%= review.content %></p> <p><%= review.rating %>/5</p></li>
     <% end %>
+</ul>
 
-<%=link_to "add review", new_restaurant_review_path(@restaurant) %>
+<%=link_to "Go back", restaurants_path(), class: "btn btn-primary" %>
 
-<%=link_to "Go back", restaurants_path() %>
+<h1>Add your review</h1>
+
+<%= simple_form_for [ @restaurant, @review ] do |f| %>
+  <%= f.input :rating %>
+  <%= f.input :content%>
+  <%= f.button :submit, class: "btn btn-primary" %>
+<% end %>
+
